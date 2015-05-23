@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+        <title>Racing Camel with BPM and Red Hat JBoss Fuse</title>
+
+        <meta name="description" content="Summit 2015 lab">
+        <meta name="author" content="Eric D. Schabell, Christina Lin">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/serif.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                <section>
+                    <div style="width: 1056px; height: 250px; color: white">
+                        <h2>Workshop</h2>
+                        <h3>Building a JBoss BPM Travel Agency</h3>
+                    </div>
+                    <div style="width: 1056px; height: 250px;">
+                        <h5>
+                            Now that we have logged in, everything is running, we can start by creating the last two (2)
+                            guided rules needed for form field validation. We want to make sure that the user only submits
+                            the available to and from destinations for travel that we support.
+                        </h5>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Lab 02 - Create Guided Rules</h3>
+                </section>
+
+                <section data-background-color="white">
+                    <div style="width: 1056px; height: 180px;">
+                        <h2>Lab Goal</h2>
+                        <h4>To create guided rules for form field validation and managing our rule facts in memory for JBoss BPM Travel Agency</h4>
+                    </div>
+                    <div style="width: 1056px; height: 600px;">
+                        <img src="images/bpmsuite-component-ruleauthoring.png">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Start by creating new guided rule:</li>
+                        <ul>
+                            <li><code>AUTHORING -> PROJECT AUTHORING -> NEW ITEM -> GUIDED RULE</code></li>
+                            <li><code>RESOURCE NAME: InvalidToDestination</code></li>
+                            <li><code>PACKAGE: default</code></li>
+                            <li>don't check the DSL box, click on <code>+OK</code></li>
+                        </ul>
+                    </ul>
+                    <div style="width: 1056px; height: 600px;">
+                        <img src="images/bpms-workshop/image2-1.png">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Before writing the rule we need to import the needed model</li>
+                        <li>We need a few objects for this rule:</li>
+                        <ul>
+                            <li><code>CONFIG tab on the bottom of rule</code></li>
+                        </ul>
+                        <div  style="width: 1056px; height: 450px; float: right">
+                            <img src="images/bpms-workshop/image2-13.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Let's add the Rejection object:</li>
+                        <ul>
+                            <li><code>NEW ITEM button at top, select Rejection</code></li>
+                            <li>click on <code>+OK</code></li>
+                        </ul>
+                        <div  style="width: 1056px; height: 300px; float: right">
+                            <img src="images/bpms-workshop/image2-2.png" />
+                            <img src="images/bpms-workshop/image2-3.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Repeat the same to add <code>TravelDetails</code>:</li>
+                        <ul>
+                            <li><code>CONFIG tab on the bottom of rule</code></li>
+                            <li><code>NEW ITEM button at top, select TravelDetails</code></li>
+                            <li>click on <code>+OK</code></li>
+                        </ul>
+                        <div  style="width: 1056px; height: 300px; float: right">
+                            <img src="images/bpms-workshop/image2-4.png" />
+                            <img src="images/bpms-workshop/image2-5.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Your <code>CONFIG</code> tab should look like this:</li>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img src="images/bpms-workshop/image2-6.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Now return to the <code>Editor</code> tab an start designing our rule</li>
+                        <li>Click on condition (WHEN) <code>GREEN PLUS ICON</code> top right</li>
+                        <li>Select <code>TravelDetails</code> and click <code>+OK</code></li>
+                    </ul>
+                    <div  style="width: 1056px; height: 500px; float: right">
+                        <img src="images/bpms-workshop/image2-7.png" />
+                        <img src="images/bpms-workshop/image2-8.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Click on line <code>'There is a TravelDetails'</code></li>
+                        <li>Select <code>toDestination</code> in <code>'Add a restriction to a field'</code></li>
+                    </ul>
+                    <div  style="width: 1056px; height: 500px; float: right">
+                        <img src="images/bpms-workshop/image2-9.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                        <ul>
+                            <li>Select <code>'is contained in...'</code> from pull-down menu</li>
+                            <li>click on <code>pencil mini icon</code> and click on <code>'Literal value'</code> in pop-up</li>
+                        </ul>
+                    <div  style="width: 1056px; height: 500px; float: right">
+                        <img src="images/bpms-workshop/image2-10.png" />
+                        <img src="images/bpms-workshop/image2-11.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <div  style="width: 1056px; height: 150px; float: right">
+                        <h2>Creating guided rules</h2>
+                    </div>
+                    <ul>
+                        <li>Enter text in field:</li>
+                        <li><strong><code>Edinburgh, Glasgow</code></strong></li>
+                    </ul>
+                    <div  style="width: 1056px; height: 500px; float: right">
+                        <img src="images/bpms-workshop/image2-12.png" />
+                    </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>The action (THEN) is a two part action</li>
+                        <li>The first action is to put a Rejection fact into memory</li>
+                        <li>We will use this to decide in the process if the field was valid:</li>
+                        <ul>
+                            <li>click on action (THEN) <code>GREEN PLUS ICON</code> on far right</li>
+                            <li>select <code>Rejection</code> and click <code>+OK</code></li>
+                            <li>click on <code>Insert Rejection</code>, add <code>BOUND VARIABLE: 'fact0'</code>, click on SET</li>
+                        </ul>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img src="images/bpms-workshop/image2-14.png" />
+                            <img src="images/bpms-workshop/image2-15.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <div  style="width: 1056px; height: 150px; float: right">
+                        <h2>Creating guided rules</h2>
+                    </div>
+                    <ul>
+                        <li>Your rule should look just like below</li>
+                        <li>Next we add a reason for the rejection</li>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img src="images/bpms-workshop/image2-16.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>This reason will be used to report why the destination was rejected:</li>
+                        <ul>
+                            <li>click on <code>Insert Rejection</code>, select <code>ADD FIELD: reason</code></li>
+                            <li>click on <code>PENCIL MINI ICON</code>, select <code>FIELD VALUE: Literal value</code></li>
+                        </ul>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img src="images/bpms-workshop/image2-17.png" />
+                            <img src="images/bpms-workshop/image2-18.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <div  style="width: 1056px; height: 150px; float: right">
+                        <h2>Creating guided rules</h2>
+                    </div>
+                    <ul><li>REASON: <code><strong>Sorry!!! We do not provide service to this destination.</strong></code></li>
+                        <li>Your rule should look just like below</li>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img src="images/bpms-workshop/image2-19.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Now we add a second action (THEN) to log our actions</li>
+                        <ul>
+                            <li>click on action (THEN) <code>GREEN PLUS ICON</code> on far right</li>
+                            <li>select <code>Add free form DRL</code> and click <code>+OK</code></li>
+                        </ul>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img src="images/bpms-workshop/image2-20.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Now we add a second action (THEN) to log our actions</li>
+                        <ul>
+                            <li>click on action (THEN) <code>GREEN PLUS ICON</code> on far right</li>
+                            <li>select <code>Add free form DRL</code> and click <code>+OK</code></li>
+                            <li>Enter text: <code><strong>System.out.println("Rejected due to invalid To Destination.");</strong></code></li>
+                        </ul>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img src="images/bpms-workshop/image2-21.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Expand the 'show options' and add attributes (use GREEN PLUS ICON on right):</li>
+                        <ul>
+                            <li><code>DIALECT: MVEL</code></li>
+                            <li><code>RULEFLOW-GROUP: rejection</code></li>
+                        </ul>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img src="images/bpms-workshop/image2-22.png" />
+                            <img src="images/bpms-workshop/image2-23.png" />
+                        </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <div  style="width: 1056px; height: 150px; float: right">
+                        <h2>Save your guided rule</h2>
+                    </div>
+                    <ul>
+                        <li>Rule should look like shown below</li>
+                        <li>Save the rule with comment message</li>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img width="55%" src="images/bpms-workshop/image2-24.png" />
+                            <img width="40%"src="images/bpms-workshop/image2-25.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <div  style="width: 1056px; height: 100px; float: right">
+                        <h2>Ensure project builds</h2>
+                    </div>
+                    <ul>
+                        <li>Before you build project, ensure there are no active deployments</li>
+                        <li><code>Deploy -> Process Deployments</code></li>
+                        <li>if exists an entry for <code>Special Trips Agency 2.0.0</code> then remove by clicking on mini icon <img src="images/bpms-workshop/image2-42.png" /></li>
+                    </ul>
+                    <div  style="width: 1056px; height: 500px; float: right">
+                        <img src="images/bpms-workshop/image2-40.png" />
+                        <img width="60%" src="images/bpms-workshop/image2-41.png" />
+                        <img src="images/bpms-workshop/image2-43.png" />
+                        <img width="60%" src="images/bpms-workshop/image2-44.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <div  style="width: 1056px; height: 100px; float: right">
+                        <h2>Ensure project builds</h2>
+                    </div>
+                    <ul>
+                        <li><code>OPEN PROJECT EDITOR -> BUILD (top right) -> BUILD & DEPLOY</code></li>
+                        <li><code>(should see green pop-up 'Build Successful')</code></li>
+                    </ul>
+                    <div  style="width: 1056px; height: 500px; float: right">
+                        <img src="images/bpms-workshop/image2-26.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <div style="width: 1056px; height: 150px; color: white">
+                        <h2>Create validation rule</h2>
+                    </div>
+                    <div style="width: 1056px; height: 270px;">
+                        <h5>
+                            Now you will create another rule that is quite similar to the previous rule, just this
+                            time we will be creating a rule to validate the data field:
+                            <br />
+                            <br />
+                            <code>FROM DESTINATION</code>
+                        </h5>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Start by creating new guided rule:</li>
+                        <ul>
+                            <li><code>AUTHORING -> PROJECT AUTHORING -> NEW ITEM -> GUIDED RULE</code></li>
+                            <li><code>RESOURCE NAME: InValidFromDestination</code></li>
+                            <li><code>PACKAGE: default</code></li>
+                            <li>don't check the DSL box, click on <code>+OK</code></li>
+                        </ul>
+                    </ul>
+                    <div style="width: 1056px; height: 600px;">
+                        <img src="images/bpms-workshop/image2-27.png">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Before writing the rule we need to import the needed model</li>
+                        <li>We need a few objects for this rule:</li>
+                        <ul>
+                            <li><code>CONFIG tab on the bottom of rule</code></li>
+                        </ul>
+                        <div  style="width: 1056px; height: 450px; float: right">
+                            <img src="images/bpms-workshop/image2-28.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Let's add the Rejection object:</li>
+                        <ul>
+                            <li><code>NEW ITEM button at top, select Rejection</code></li>
+                            <li>click on <code>+OK</code></li>
+                        </ul>
+                        <div  style="width: 1056px; height: 300px; float: right">
+                            <img src="images/bpms-workshop/image2-2.png" />
+                            <img src="images/bpms-workshop/image2-3.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Repeat the same to add <code>TravelDetails</code>:</li>
+                        <ul>
+                            <li><code>CONFIG tab on the bottom of rule</code></li>
+                            <li><code>NEW ITEM button at top, select TravelDetails</code></li>
+                            <li>click on <code>+OK</code></li>
+                        </ul>
+                        <div  style="width: 1056px; height: 300px; float: right">
+                            <img src="images/bpms-workshop/image2-4.png" />
+                            <img src="images/bpms-workshop/image2-5.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Repeat the same to add <code>BookingObject</code>:</li>
+                        <ul>
+                            <li><code>CONFIG tab on the bottom of rule</code></li>
+                            <li><code>NEW ITEM button at top, select BookingObject</code></li>
+                            <li>click on <code>+OK</code></li>
+                        </ul>
+                        <div  style="width: 1056px; height: 300px; float: right">
+                            <img src="images/bpms-workshop/image2-29.png" />
+                            <img src="images/bpms-workshop/image2-30.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Your <code>CONFIG</code> tab should look like this:</li>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img src="images/bpms-workshop/image2-31.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Now return to the <code>Editor</code> tab an start designing our rule</li>
+                        <li>Click on condition (WHEN) <code>GREEN PLUS ICON</code> top right</li>
+                        <li>Select <code>TravelDetails</code> and click <code>+OK</code></li>
+                    </ul>
+                    <div  style="width: 1056px; height: 500px; float: right">
+                        <img src="images/bpms-workshop/image2-7.png" />
+                        <img src="images/bpms-workshop/image2-32.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Click on line <code>'There is a TravelDetails'</code></li>
+                        <li>Select <code>fromDestination</code> in <code>'Add a restriction to a field'</code></li>
+                    </ul>
+                    <div  style="width: 1056px; height: 500px; float: right">
+                        <img src="images/bpms-workshop/image2-33.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Select <code>'is contained in...'</code> from pull-down menu</li>
+                        <li>click on <code>pencil mini icon</code> and click on <code>'Literal value'</code> in pop-up</li>
+                    </ul>
+                    <div  style="width: 1056px; height: 500px; float: right">
+                        <img src="images/bpms-workshop/image2-34.png" />
+                        <img src="images/bpms-workshop/image2-11.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <div  style="width: 1056px; height: 150px; float: right">
+                        <h2>Creating guided rules</h2>
+                    </div>
+                    <ul>
+                        <li>Enter text in field:</li>
+                        <li><strong><code>London, Gatwick, Farnborough</code></strong></li>
+                    </ul>
+                    <div  style="width: 1056px; height: 500px; float: right">
+                        <img src="images/bpms-workshop/image2-35.png" />
+                    </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>The action (THEN) is a two part action</li>
+                        <li>The first action is to put a Rejection fact into memory</li>
+                        <li>We will use this to decide in the process if the field was valid:</li>
+                        <ul>
+                            <li>click on action (THEN) <code>GREEN PLUS ICON</code> on far right</li>
+                            <li>select <code>Rejection</code> and click <code>+OK</code></li>
+                            <li>click on <code>Insert Rejection</code>, add <code>BOUND VARIABLE: 'fact0'</code>, click on SET</li>
+                        </ul>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img src="images/bpms-workshop/image2-14.png" />
+                            <img src="images/bpms-workshop/image2-15.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <div  style="width: 1056px; height: 150px; float: right">
+                        <h2>Creating guided rules</h2>
+                    </div>
+                    <ul>
+                        <li>Your rule should look just like below</li>
+                        <li>Next we add a reason for the rejection</li>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img src="images/bpms-workshop/image2-36.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>This reason will be used to report why the destination was rejected:</li>
+                        <ul>
+                            <li>click on <code>Insert Rejection</code>, select <code>ADD FIELD: reason</code></li>
+                            <li>click on <code>PENCIL MINI ICON</code>, select <code>FIELD VALUE: Literal value</code></li>
+                        </ul>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img src="images/bpms-workshop/image2-17.png" />
+                            <img src="images/bpms-workshop/image2-18.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <div  style="width: 1056px; height: 150px; float: right">
+                        <h2>Creating guided rules</h2>
+                    </div>
+                    <ul><li>REASON: <code><strong>Sorry!!! We do not provide service from this destination.</strong></code></li>
+                        <li>Your rule should look just like below</li>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img src="images/bpms-workshop/image2-37.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Now we add a second action (THEN) to log our actions</li>
+                        <ul>
+                            <li>click on action (THEN) <code>GREEN PLUS ICON</code> on far right</li>
+                            <li>select <code>Add free form DRL</code> and click <code>+OK</code></li>
+                        </ul>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img src="images/bpms-workshop/image2-20.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Now we add a second action (THEN) to log our actions</li>
+                        <ul>
+                            <li>click on action (THEN) <code>GREEN PLUS ICON</code> on far right</li>
+                            <li>select <code>Add free form DRL</code> and click <code>+OK</code></li>
+                            <li>Enter text: <code><strong>System.out.println("Rejected due to invalid From Destination.");</strong></code></li>
+                        </ul>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img src="images/bpms-workshop/image2-38.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Creating guided rules</h2>
+                    <ul>
+                        <li>Expand the 'show options' and add attributes (use GREEN PLUS ICON on right):</li>
+                        <ul>
+                            <li><code>DIALECT: MVEL</code></li>
+                            <li><code>RULEFLOW-GROUP: rejection</code></li>
+                        </ul>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img src="images/bpms-workshop/image2-22.png" />
+                            <img src="images/bpms-workshop/image2-23.png" />
+                        </div>
+                    </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <div  style="width: 1056px; height: 150px; float: right">
+                        <h2>Save your guided rule</h2>
+                    </div>
+                    <ul>
+                        <li>Rule should look like shown below</li>
+                        <li>Save the rule with comment message</li>
+                        <div  style="width: 1056px; height: 500px; float: right">
+                            <img width="55%" src="images/bpms-workshop/image2-39.png" />
+                            <img width="40%"src="images/bpms-workshop/image2-25.png" />
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <div  style="width: 1056px; height: 100px; float: right">
+                        <h2>Ensure project builds</h2>
+                    </div>
+                    <ul>
+                        <li>Before you build project, ensure there are no active deployments</li>
+                        <li><code>Deploy -> Process Deployments</code></li>
+                        <li>if exists an entry for <code>Special Trips Agency 2.0.0</code> then remove by clicking on mini icon <img src="images/bpms-workshop/image2-42.png" /></li>
+                    </ul>
+                    <div  style="width: 1056px; height: 500px; float: right">
+                        <img src="images/bpms-workshop/image2-40.png" />
+                        <img width="60%" src="images/bpms-workshop/image2-41.png" />
+                        <img src="images/bpms-workshop/image2-43.png" />
+                        <img width="60%" src="images/bpms-workshop/image2-44.png" />
+                    </div>
+                </section>
+                <section>
+                    <div  style="width: 1056px; height: 100px; float: right">
+                        <h2>Ensure project builds</h2>
+                    </div>
+                    <ul>
+                        <li>right pane -> <code>OPEN PROJECT EDITOR -> BUILD (top right) -> BUILD & DEPLOY</code></li>
+                        <li><code>(should see green pop-up 'Build Successful')</code></li>
+                    </ul>
+                    <div  style="width: 1056px; height: 500px; float: right">
+                        <img src="images/bpms-workshop/image2-45.png" />
+                    </div>
+                </section>
+
+<!-- todo: more guided rules. -->
+
+                <section>
+                    <h3>Building the Travel Agency</h3>
+                    <h5>(next up, creating technical rules...)</h5>
+                    <img src="images/bpms-workshop/image2-46.png">
+                </section>
+
+                <section data-background="images/jteimages/image42.png" data-background-position="top">
+                    <div style="width: 1056px; height: 450px;" align="right">
+                    </div>
+                    <div style="width: 1156px; height: 100px;" align="right">
+                        <div style="width: 500px; height: 100px;" align="left">
+                            Eric D. Schabell<br>
+                            JBoss Technology Evangelist<br>
+                            <a href="http://twitter.com/ericschabell" target="_blank">@ericschabell</a><br>
+                            <a href="http://schabell.org" target="_blank">http://schabell.org</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div align="center">
+                        <img height="150" width="99%" src="images/references.jpg">
+                    </div>
+                    <ul>
+                        <li>JBoss BRMS & BPM Suite Articles</li>
+                        <ul>
+                            <li><a href="http://schabell.org/search/label/BPMS" style="color: red" target="_blank">http://schabell.org/search/label/BPMS</a></li>
+                        </ul>
+                        <li>JBoss BPM Suite Demos</li>
+                        <ul>
+                            <li><a href="http://www.schabell.org/2014/12/3-reasons-you-need-new-jboss-travel-agency.html" style="color: red" target="_blank">Travel Agency Demo</a></li>
+                            <li><a href="http://www.schabell.org/2015/05/micro-services-migration-story-with-jboss-bpm-travel-agency.html" style="color: red" target="_blank">Travel Agency Microservices Demo</a></li>
+                            <li><a href="http://www.schabell.org/2015/03/jboss-bpmsuite-helping-travelers-with-lost-bags.html" style="color: red" target="_blank">Baggage Delivery Demo</a></li>
+                        </ul>
+                        <li>JBoss bpmPaaS Demos</li>
+                        <ul>
+                            <li><a href="http://www.schabell.org/2014/05/redhat-openshift-bpmPaaS-genericloan-demo.html" style="color: red" target="_blank">bpmPaaS Generic Loan Process in the Cloud</a></li>
+                            <li><a href="http://www.schabell.org/2015/02/into-clouds-with-jboss-bpm-travel-agency.html" style="color: red" target="_blank">bpmPaaS Travel Agency in the Cloud</a></li>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>JBoss BPM Suite Workshop</h2>
+                    <h3><a href="lab03.html" style="color: red" target="_blank">Lab 03 - Create Travel Agency BPM Process</a></h3>
+                </section>
+            </div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
