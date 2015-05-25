@@ -52,6 +52,10 @@
                             Now that we have logged in, everything is running, we can start by creating the last two (2)
                             guided rules needed for form field validation. We want to make sure that the user only submits
                             the available to and from destinations for travel that we support.
+                            <br /><br />
+                            You will find that most of the JBoss BPM Travel Agency artifacts have been provided, just a
+                            couple of validation rules need to be created and a partial process needs to be finished. Let's
+                            get started, shall we?
                         </h5>
                     </div>
                 </section>
@@ -63,7 +67,7 @@
                 <section data-background-color="white">
                     <div style="width: 1056px; height: 180px;">
                         <h2>Lab Goal</h2>
-                        <h4>To create guided rules for form field validation and managing our rule facts in memory for JBoss BPM Travel Agency</h4>
+                        <h4>To create guided rules for form field validation for JBoss BPM Travel Agency</h4>
                     </div>
                     <div style="width: 1056px; height: 600px;">
                         <img src="images/bpmsuite-component-ruleauthoring.png">
@@ -82,7 +86,7 @@
                         </ul>
                     </ul>
                     <div style="width: 1056px; height: 600px;">
-                        <img src="images/bpms-workshop/image2-1.png">
+                        <img src="images/bpms-workshop/image2-01.png">
                     </div>
                 </section>
 
@@ -109,8 +113,8 @@
                             <li>click on <code>+OK</code></li>
                         </ul>
                         <div  style="width: 1056px; height: 300px; float: right">
-                            <img src="images/bpms-workshop/image2-2.png" />
-                            <img src="images/bpms-workshop/image2-3.png" />
+                            <img src="images/bpms-workshop/image2-02.png" />
+                            <img src="images/bpms-workshop/image2-03.png" />
                         </div>
                     </ul>
                 </section>
@@ -125,8 +129,8 @@
                             <li>click on <code>+OK</code></li>
                         </ul>
                         <div  style="width: 1056px; height: 300px; float: right">
-                            <img src="images/bpms-workshop/image2-4.png" />
-                            <img src="images/bpms-workshop/image2-5.png" />
+                            <img src="images/bpms-workshop/image2-04.png" />
+                            <img src="images/bpms-workshop/image2-05.png" />
                         </div>
                     </ul>
                 </section>
@@ -136,7 +140,7 @@
                     <ul>
                         <li>Your <code>CONFIG</code> tab should look like this:</li>
                         <div  style="width: 1056px; height: 500px; float: right">
-                            <img src="images/bpms-workshop/image2-6.png" />
+                            <img src="images/bpms-workshop/image2-06.png" />
                         </div>
                     </ul>
                 </section>
@@ -149,8 +153,8 @@
                         <li>Select <code>TravelDetails</code> and click <code>+OK</code></li>
                     </ul>
                     <div  style="width: 1056px; height: 500px; float: right">
-                        <img src="images/bpms-workshop/image2-7.png" />
-                        <img src="images/bpms-workshop/image2-8.png" />
+                        <img src="images/bpms-workshop/image2-07.png" />
+                        <img src="images/bpms-workshop/image2-08.png" />
                     </div>
                 </section>
 
@@ -161,7 +165,7 @@
                         <li>Select <code>toDestination</code> in <code>'Add a restriction to a field'</code></li>
                     </ul>
                     <div  style="width: 1056px; height: 500px; float: right">
-                        <img src="images/bpms-workshop/image2-9.png" />
+                        <img src="images/bpms-workshop/image2-09.png" />
                     </div>
                 </section>
 
@@ -392,8 +396,8 @@
                             <li>click on <code>+OK</code></li>
                         </ul>
                         <div  style="width: 1056px; height: 300px; float: right">
-                            <img src="images/bpms-workshop/image2-2.png" />
-                            <img src="images/bpms-workshop/image2-3.png" />
+                            <img src="images/bpms-workshop/image2-02.png" />
+                            <img src="images/bpms-workshop/image2-03.png" />
                         </div>
                     </ul>
                 </section>
@@ -408,8 +412,8 @@
                             <li>click on <code>+OK</code></li>
                         </ul>
                         <div  style="width: 1056px; height: 300px; float: right">
-                            <img src="images/bpms-workshop/image2-4.png" />
-                            <img src="images/bpms-workshop/image2-5.png" />
+                            <img src="images/bpms-workshop/image2-04.png" />
+                            <img src="images/bpms-workshop/image2-05.png" />
                         </div>
                     </ul>
                 </section>
@@ -448,7 +452,7 @@
                         <li>Select <code>TravelDetails</code> and click <code>+OK</code></li>
                     </ul>
                     <div  style="width: 1056px; height: 500px; float: right">
-                        <img src="images/bpms-workshop/image2-7.png" />
+                        <img src="images/bpms-workshop/image2-07.png" />
                         <img src="images/bpms-workshop/image2-32.png" />
                     </div>
                 </section>
@@ -640,7 +644,7 @@
 
                 <section>
                     <h3>Building the Travel Agency</h3>
-                    <h5>(next up, creating technical rules...)</h5>
+                    <h5>(next up, completing a BPM process...)</h5>
                     <img src="images/bpms-workshop/image2-46.png">
                 </section>
 
@@ -658,31 +662,26 @@
                 </section>
 
                 <section>
-                    <div align="center">
+                    <div style="width: 1056px; height: 200px; color: white">
                         <img height="150" width="99%" src="images/references.jpg">
                     </div>
-                    <ul>
-                        <li>JBoss BRMS & BPM Suite Articles</li>
+                    <div style="width: 1056px; height: 500px">
                         <ul>
-                            <li><a href="http://schabell.org/search/label/BPMS" style="color: red" target="_blank">http://schabell.org/search/label/BPMS</a></li>
+                            <li>Racing Camel with BPM and Red Hat JBoss Fuse</li>
+                            <ul>
+                                <li><a href="https://github.com/eschabell/summit-racing-camel-with-jboss-bpm-fuse" style="color: red" target="_blank">Get this workshop from Github</a></li>
+                                <li><a href="https://github.com/jbossdemocentral/bpms-fuse-travel-agency-integration-demo" style="color: red" target="_blank">Travel Agency Microservices project</a></li>
+                                <li><a href="http://bpmworkshop-onthe.rhcloud.com" style="color: red" target="_blank">Free online BPM workshops</a></li>
+                                <li><a href="http://www.schabell.org/2015/05/microservices-migration-story-with-jboss-bpm-travel-agency-video.html" style="color: red" target="_blank">Video of Travel Agency Microservices</a></li>
+                                <li><a href="http://wei-meilin.blogspot.nl/2015/05/integration-project-micro-services_22.html" style="color: red" target="_blank">Series howto build JBoss Fuse Microservices</a></li>
+                            </ul>
                         </ul>
-                        <li>JBoss BPM Suite Demos</li>
-                        <ul>
-                            <li><a href="http://www.schabell.org/2014/12/3-reasons-you-need-new-jboss-travel-agency.html" style="color: red" target="_blank">Travel Agency Demo</a></li>
-                            <li><a href="http://www.schabell.org/2015/05/micro-services-migration-story-with-jboss-bpm-travel-agency.html" style="color: red" target="_blank">Travel Agency Microservices Demo</a></li>
-                            <li><a href="http://www.schabell.org/2015/03/jboss-bpmsuite-helping-travelers-with-lost-bags.html" style="color: red" target="_blank">Baggage Delivery Demo</a></li>
-                        </ul>
-                        <li>JBoss bpmPaaS Demos</li>
-                        <ul>
-                            <li><a href="http://www.schabell.org/2014/05/redhat-openshift-bpmPaaS-genericloan-demo.html" style="color: red" target="_blank">bpmPaaS Generic Loan Process in the Cloud</a></li>
-                            <li><a href="http://www.schabell.org/2015/02/into-clouds-with-jboss-bpm-travel-agency.html" style="color: red" target="_blank">bpmPaaS Travel Agency in the Cloud</a></li>
-                        </ul>
-                    </ul>
+                    </div>
                 </section>
 
                 <section>
                     <h2>JBoss BPM Suite Workshop</h2>
-                    <h3><a href="lab03.html" style="color: red" target="_blank">Lab 03 - Create Travel Agency BPM Process</a></h3>
+                    <h3><a href="lab03.html" style="color: red" target="_blank">Lab 03 - Complete the Travel Agency BPM Process</a></h3>
                 </section>
             </div>
 		</div>
