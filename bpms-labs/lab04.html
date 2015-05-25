@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Racing Camel with BPM and Red Hat JBoss Fuse</title>
+
+		<meta name="description" content="Summit 2015 lab">
+		<meta name="author" content="Eric D. Schabell, Christina Lin">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/serif.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                <section>
+                    <div style="width: 1056px; height: 250px; color: white">
+                        <h2>Workshop</h2>
+                        <h3>Building a JBoss BPM Travel Agency</h3>
+                    </div>
+                    <div style="width: 1056px; height: 250px;">
+                        <h5>
+                            After building the rules and process pieces, we are ready to dive into building our backend
+                            JBoss Fuse microservices.
+                        </h5>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Lab 04 - Building JBoss Fuse Microservices</h3>
+                </section>
+
+                <section>
+                    <div style="width: 1056px; height: 250px">
+                        <h2>Building JBoss Fuse</h2>
+                        <h2>Microservices</h2>
+                    </div>
+                    <div style="width: 1056px; height: 250px">
+                        <h5><a href="../fuse-labs/lab-summit.pdf" style="color: red" target="_blank">Click here, complete the lab instruction PDF and return here when done...</a></h5>
+                    </div>
+                </section>
+
+                <section data-background="images/jteimages/image42.png" data-background-position="top">
+                    <div style="width: 1056px; height: 100px;" align="right">
+                        <div style="width: 500px; height: 100px;" align="left">
+                            Christina Lin<br/>
+                            JBoss Technology Evangelist<br/>
+                            <a href="https://twitter.com/Christina_wm" style="color: red" target="_blank">@Christina_wm</a><br/>
+                            <a href="http://wei-meilin.blogspot.tw" style="color: red">http://wei-meilin.blogspot.tw</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div style="width: 1056px; height: 200px; color: white">
+                        <img height="150" width="99%" src="images/references.jpg">
+                    </div>
+                    <div style="width: 1056px; height: 500px">
+                        <ul>
+                            <li>Racing Camel with BPM and Red Hat JBoss Fuse</li>
+                            <ul>
+                                <li><a href="https://github.com/eschabell/summit-racing-camel-with-jboss-bpm-fuse" style="color: red" target="_blank">Get this workshop from Github</a></li>
+                                <li><a href="https://github.com/jbossdemocentral/bpms-fuse-travel-agency-integration-demo" style="color: red" target="_blank">Travel Agency Microservices project</a></li>
+                                <li><a href="http://bpmworkshop-onthe.rhcloud.com" style="color: red" target="_blank">Free online BPM workshops</a></li>
+                                <li><a href="http://www.schabell.org/2015/05/microservices-migration-story-with-jboss-bpm-travel-agency-video.html" style="color: red" target="_blank">Video of Travel Agency Microservices</a></li>
+                                <li><a href="http://wei-meilin.blogspot.nl/2015/05/integration-project-micro-services_22.html" style="color: red" target="_blank">Series howto build JBoss Fuse Microservices</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>JBoss BPM Suite Workshop</h2>
+                    <h3><a href="lab05.html" style="color: red" target="_blank">Lab 05 - Running JBoss BPM Travel Agency</a></h3>
+                </section>
+
+            </div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
