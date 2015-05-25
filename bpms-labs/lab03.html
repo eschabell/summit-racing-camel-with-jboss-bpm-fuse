@@ -95,7 +95,7 @@
                             <li>click on the main process pallet (white background)</li>
                             <li>slide out the <code>Properties</code> pane on the right</li>
                             <li>we see that the <code>Variable Definitions</code> are empty, so no data has been
-                                passed into this sub-process</li>
+                                passed into this sub-process, why?</li>
                             <div style="float: right">
                                 <img src="images/bpms-workshop/image3-02.png" />
                             </div>
@@ -113,6 +113,101 @@
                             the sub-process</li>
                             <div style="float: right">
                                 <img src="images/bpms-workshop/image3-03.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Complete the BPM process</h2>
+                    <ul>
+                        <li>We can now work directly with our rules, starting with deciding if the data submitted is valid</li>
+                        <li>To do this we need to setup the <code>'Rejection'</code> node:</li>
+                        <ul>
+                            <li>click on <code>Rejection</code> to select</li>
+                            <li>slide open <code>Properties</code>panel on the right</li>
+                            <div style="float: right">
+                                <img src="images/bpms-workshop/image3-04.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Complete the BPM process</h2>
+                    <ul>
+                        <li>We need to set the following field:</li>
+                        <ul>
+                            <li><code>Task Type: Business Rule</code></li>
+                            <li>note the change to the node, a rule icon now identifies it</li>
+                            <div style="float: right">
+                                <img src="images/bpms-workshop/image3-05.png" />
+                                <img src="images/bpms-workshop/image3-06.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <div style="width: 1056px; height: 100px">
+                        <h2>Complete the BPM process</h2>
+                    </div>
+                    <div style="width: 1056px; height: 200px">
+                        <ul>
+                            <li>We need to set the following field:</li>
+                            <ul>
+                                <li><code>Ruleflow Group: rejection</code></li>
+                                <li>open the pop-up editor, view the rules in <code>'rejection'</code>, select <code>rejection</code>, click on <code>Save</code></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div style="width: 1056px; height: 400px">
+                        <img width="49%" src="images/bpms-workshop/image3-07.png" />
+                        <img width="49%" src="images/bpms-workshop/image3-08.png" />
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Complete the BPM process</h2>
+                    <ul>
+                        <li>The validation rules are now used in <code>Rejection</code></li>
+                        <ul>
+                            <div style="float: right">
+                                <img src="images/bpms-workshop/image3-09.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Complete the BPM process</h2>
+                    <ul>
+                        <li>In the following gateway node, the path <code>Rejection</code> checks for a Rejection object in memory</li>
+                        <li>This will be there if the validation rules detect data that fails our rules</li>
+                        <li>It's done for you in <code>Properies -> Expression</code>:</li>
+                        <ul>
+                            <li><code>org.specialtripsagency.Rejection()</code></li>
+                        </ul>
+                        <ul>
+                            <div style="float: right">
+                                <img src="images/bpms-workshop/image3-10.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Complete the BPM process</h2>
+                    <ul>
+                        <li>In the following gateway node, the <code>Not Rejected</code> path verifies that there
+                            is not a Rejection object in our session</li>
+                        <li>It's done for you in <code>Properies -> Expression</code>:</li>
+                        <ul>
+                            <li><code>not org.specialtripsagency.Rejection()</code></li>
+                        </ul>
+                        <ul>
+                            <div style="float: right">
+                                <img src="images/bpms-workshop/image3-11.png" />
                             </div>
                         </ul>
                     </ul>
