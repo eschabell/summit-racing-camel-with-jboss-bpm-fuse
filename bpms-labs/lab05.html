@@ -49,8 +49,9 @@
                     </div>
                     <div style="width: 1056px; height: 250px;">
                         <h5>
-                            Now we have everything we need... rules, processes, forms and microservices. Let's take it
-                            for a spin, shall we?
+                            You have now completed your JBoss Fuse portion of this lab, all the needed microservices have
+                            been deployed. Now we have everything we need... rules, processes, forms and microservices.
+                            Let's take JBoss BPM Travel Agency it for a spin, shall we, and book our first trip?
                         </h5>
                     </div>
                 </section>
@@ -71,7 +72,7 @@
 
                 <section>
                     <div style="width: 1056px; height: 250px;">
-                        <h2>Running the project</h2>
+                        <h2>Run JBoss Travel Agency</h2>
                         Feel free to come to the Red Hat booth, find the Automate or Integrate pods for your lab on video!
                     </div>
                     <div style="width: 1056px; height: 400px;">
@@ -80,312 +81,330 @@
                 </section>
 
                 <section>
-                    <h2>Intermezzo</h2>
+                    <div  style="width: 1056px; height: 100px; float: right">
+                        <h2>Ensure project builds</h2>
+                    </div>
                     <ul>
-                        <li>We have e-mail task, but no SMTP server?</li>
-                        <li>Let's use custom WorkItemHandler to log instead of mail:</li>
-                        <li><code>Project Authoring -> Tools -> Project Editor</code></li>
-                        <img src="images/brms_bpms_workshop/image284.png">
+                        <li>Before you build project, ensure there are no active deployments</li>
+                        <li><code>Deploy -> Process Deployments</code></li>
+                        <li>if exists an entry for <code>Special Trips Agency 2.0.0</code> then remove by clicking on mini icon <img src="images/bpms-workshop/image2-42.png" /></li>
                     </ul>
+                    <div  style="width: 1056px; height: 500px; float: right">
+                        <img src="images/bpms-workshop/image2-40.png" />
+                        <img width="60%" src="images/bpms-workshop/image2-41.png" />
+                        <img src="images/bpms-workshop/image2-43.png" />
+                        <img width="60%" src="images/bpms-workshop/image2-44.png" />
+                    </div>
                 </section>
-
                 <section>
-                    <h2>Intermezzo</h2>
+                    <div  style="width: 1056px; height: 100px; float: right">
+                        <h2>Ensure project builds</h2>
+                    </div>
                     <ul>
-                        <li>We need to get a specific KnowledgeBase setup</li>
-                        <li><code>Project Settings -> Knowledge bases and sessions</code></li>
-                        <div align="right">
-                            <img src="images/brms_bpms_workshop/image310.png">
-                        </div>
+                        <li>right pane -> <code>OPEN PROJECT EDITOR -> BUILD (top right) -> BUILD & DEPLOY</code></li>
+                        <li><code>(should see green pop-up 'Build Successful')</code></li>
                     </ul>
+                    <div  style="width: 1056px; height: 500px; float: right">
+                        <img src="images/bpms-workshop/image3-36.png" />
+                    </div>
                 </section>
 
                 <section>
-                    <h2>Intermezzo</h2>
-                    <ul>
-                        <li><code>Add -> 'rewards' in pop-up -> OK</code></li>
-                        <div align="right">
-                            <img src="images/brms_bpms_workshop/image311.png">
-                        </div>
-                        <li>Select 'rewards' KnowledgeBase and make it default.</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Intermezzo</h2>
-                    <ul>
-                        <li>Add a specific KnowledgeSession</li>
-                        <li><code>Add -> 'rewardsSession' in pop-up</code></li>
-                        <li><code>check 'Default' box</code></li>
-                        <li><code>State: 'Stateful'</code></li>
-                        <li><code>Clock: 'Realtime'</code></li>
-                        <div align="right">
-                            <img src="images/brms_bpms_workshop/image312.png">
-                        </div>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Intermezzo</h2>
-                    <ul>
-                        <li>Finally, add EMAIL Work Item Handler.</li>
-                        <li><code>click on 'rewardsSession' entry pencil mini-icon to edit session</code></li>
-                        <li><code>click ADD</code></li>
-                        <li><code>Name: 'Email'</code></li>
-                        <li><code>Type:</code><code style="font-size: large">new org.jbpm.process.instance.impl.demo.SystemOutWorkItemHandler()</code></li>
-                        <li>Close pop-up and save Project Editor</li>
-                        <div align="right">
-                            <img src="images/brms_bpms_workshop/image313.png">
-                        </div>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Intermezzo</h2>
-                    <ul>
-                        <li>Now when we run our project, the email task will not fail.</li>
-                        <li>Instead of using SMTP server, we write to server log.</li>
-                        <li>This is an example of overriding a default work item handler with a custom implementation.</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Running rewards process</h2>
-                    <ul>
-                        <li>Are you ready to build and deploy our rewards project?</li>
-                        <li><code>Project Authoring -> Tools -> Project Editor</code></li>
-                        <img src="images/brms_bpms_workshop/image284.png">
-                </section>
-
-                <section>
-                    <h2>Running rewards process</h2>
-                    <ul>
-                        <li>click on <i>Build & Deploy</i> button in top right corner</li>
-                    </ul>
-                    <img src="images/brms_bpms_workshop/image285.png">
-                </section>
-
-                <section>
-                    <h2>Running rewards process</h2>
-                    <ul>
-                        <li>Click on <i>No</i> in Information popup to just build and deploy</li>
-                        <li>Watch for the green popup bar stating that the build was successful</li>
-                    </ul>
-                    <img src="images/brms_bpms_workshop/image286.png">
-                    <img src="images/brms_bpms_workshop/image287.png">
-                </section>
-
-                <section>
-                    <h2>Running rewards process</h2>
+                    <h2>Run JBoss Travel Agency</h2>
                     <ul>
                         <li>Now we can examine our deployed process definition</li>
                         <li><code>Project Authoring -> Process Mangement -> Process Definitions</code></li>
-                        <img src="images/brms_bpms_workshop/image150.png">
-                        <li>To view our definition details, click on the magnifying glass icon under <i>Actions</i></li>
+                        <li>View definition details, click on the <i>specialtripsagencyprocess</i></li>
                     </ul>
-                    <img src="images/brms_bpms_workshop/image288.png">
+                    <img src="images/bpms-workshop/image5-01.png">
                 </section>
 
                 <section>
-                    <h2>Running rewards process</h2>
+                    <h2>Run JBoss Travel Agency</h2>
                     <ul>
-                        <li>An overview of the various process definition details is given in this view</li>
+                        <li>An overview of the various details is shown</li>
                         <li>You can start a process instance from here by clicking the <i>New Instance</i> button</li>
+                        <li>But we will use the external web application:</li>
+                        <ul>
+                            <li><a href="http://localhost:8080/external-client-ui-form-1.0" style="color: red" target="_blank">http://localhost:8080/external-client-ui-form-1.0</a></li>
+                        </ul>
                     </ul>
-                    <img src="images/brms_bpms_workshop/image289.png">
+                    <img src="images/bpms-workshop/image5-02.png">
                 </section>
 
                 <section>
-                    <h2>Running rewards process</h2>
-                    <ul>
-                        <li>We can also start a process instance from the <i>Process Definition</i> view by clicking the start-icon under <i>Actions</i></li>
-                    </ul>
-                    <img src="images/brms_bpms_workshop/image288.png">
+                    <div style="width: 1056px; height: 350px">
+                        <h2>Run JBoss Travel Agency</h2>
+                        <ul>
+                            <li>Fill in form, only modify these fields:</li>
+                            <ul>
+                                <li><code>Applicant Name: [your name]</code></li>
+                                <li><code>Email Address: [your@email.com]</code></li>
+                                <li><code>Number Of Travelers: 2</code></li>
+                                <li><code>Preferred Date Of Arrival: 2015-06-28</code></li>
+                                <li><code>Preferred Date Of Departure: 2015-06-30</code></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div style="width: 1056px; height: 300px; color: white" align="right">
+                        <img src="images/bpms-workshop/image5-03.png">
+                    </div>
                 </section>
 
                 <section>
-                    <h2>Running rewards process</h2>
+                    <h2>Run JBoss Travel Agency</h2>
                     <ul>
-                        <li>Either way, we get a popup start process form that we designed previously</li>
-                        <li>We fill in the rewards submission details and click on the arrow at the bottom</li>
+                        <li>Submit your travel request (click on button)</li>
+                        <li>This uses the RESTAPI to start your process instance, returning a number that applications
+                            use to continue further intereacitons with this instance.</li>
                     </ul>
-                    <img src="images/brms_bpms_workshop/image290.png">
+                    <img src="images/bpms-workshop/image5-04.png">
                 </section>
 
                 <section>
-                    <h2>Running rewards process</h2>
+                    <h2>Run JBoss Travel Agency</h2>
                     <ul>
-                        <li>Watch for the yellow popup bar stating <i>Process instance started</i></li>
-                        <li>We are then presented with the process instance view, notice progression to <i>Approve Reward</i> task</li>
+                        <li><code>Project Authoring -> Process Mangement -> Process Instances</code></li>
+                        <li>View both running (ACTIVE) and completed sub-process (COMPLETED) to see your instance</li>
                     </ul>
-                    <img src="images/brms_bpms_workshop/image291.png">
+                    <img src="images/bpms-workshop/image5-05.png">
+                    <img src="images/bpms-workshop/image5-06.png">
                 </section>
 
                 <section>
-                    <h2>Running rewards process</h2>
+                    <h2>Run JBoss Travel Agency</h2>
                     <ul>
-                        <li>Open the task list to view waiting user tasks</i></li>
+                        <li>View by clicking on completed <code>calculatepriceprocess</code></li>
+                        <li>View tabs on right pane for details, variables, logs, etc.</li>
+                    </ul>
+                    <img src="images/bpms-workshop/image5-07.png">
+                </section>
+
+                <section>
+                    <h2>Run JBoss Travel Agency</h2>
+                    <ul>
+                        <li>click on <code>OPTIONS -> PROCESS MODEL</code> to view path taken</li>
+                        <li>the grey path is where the process went, here we see the validation, discount and total
+                            pricing were calculated before retracting our facts from memory and exiting this sub-process</li>
+                    </ul>
+                    <img src="images/bpms-workshop/image5-08.png">
+                </section>
+
+                <section>
+                    <h2>Run JBoss Travel Agency</h2>
+                    <ul>
+                        <li>Now lets examine our progress in the main process</li>
+                        <li>View by clicking on active <code>specialtripsagencyprocess</code></li>
+                        <li>View tabs on right pane for details, variables, logs, etc.</li>
+                    </ul>
+                    <img src="images/bpms-workshop/image5-09.png">
+                </section>
+
+                <section>
+                    <h2>Run JBoss Travel Agency</h2>
+                    <ul>
+                        <li>Click on <code>OPTIONS -> PROCESS MODEL</code> to view path, resize process with top right button on menu bar</li>
+                        <li>The grey path is where the process went, here we see the sub-flow calculated pricing, now
+                            waiting on <code>Employee Booking</code> review task, so let's process a task!</li>
+                    </ul>
+                    <img src="images/bpms-workshop/image5-10.png">
+                </section>
+
+                <section>
+                    <h2>Run JBoss Travel Agency</h2>
+                    <ul>
+                        <li>Open the task list to view waiting user tasks</li>
                         <li><code>Project Authoring -> Tasks -> Tasks List</code></li>
-                        <img src="images/brms_bpms_workshop/image292.png">
+                        <img src="images/bpms-workshop/image5-11.png">
                         <li>Our task is in the <i>Active</i> and <i>Group</i> lists until claimed</li>
                     </ul>
-                    <img src="images/brms_bpms_workshop/image293.png">
+                    <img src="images/bpms-workshop/image5-12.png">
+                    <img src="images/bpms-workshop/image5-13.png">
                 </section>
 
                 <section>
-                    <h2>Running rewards process</h2>
+                    <h2>Run JBoss Travel Agency</h2>
                     <ul>
-                        <li>Click on open lock icon to claim the task, a yellow popup bar confirms claim</li>
-                        <li>We are presented with the details of our task</li>
+                        <li>Click on task to open the <code>Employee Booking</code> task</li>
+                        <li>The right pane opens with our task form, but first must <code>CLAIM</code> it, click button at bottom</li>
                     </ul>
-                    <img src="images/brms_bpms_workshop/image294.png">
+                    <img src="images/bpms-workshop/image5-14.png">
                 </section>
 
                 <section>
-                    <h2>Running rewards process</h2>
+                    <h2>Run JBoss Travel Agency</h2>
                     <ul>
-                        <li>To start working on this item, click on the check-icon or <i>Work</i> button</i></li>
-                        <li>Presented the task form on the right as we designed it, data read-only, approval check box</li>
-                        <li>But wait.... something is wrong???</li>
+                        <li>Note that the task is no longer available for <code>GROUP</code> to claim</li>
+                        <li>Task is now in your <code>PERSONAL</code> list, just for you to work on</li>
                     </ul>
-                    <img src="images/brms_bpms_workshop/image295.png">
+                    <img src="images/bpms-workshop/image5-15.png">
+                    <img src="images/bpms-workshop/image5-16.png">
                 </section>
 
                 <section>
-                    <h2>Intermezzo</h2>
+                    <h2>Run JBoss Travel Agency</h2>
                     <ul>
-                        <li>The read-only data for <i>amount</i> and <i>explaination</i> from our Award object is missing?</li>
-                        <li>This is a problem and left to you for extra credit to fix</li>
-                        <li>Hint: mappings of data in forms...</li>
+                        <li>We will now confirm the booking by filling in:</li>
+                        <ul>
+                            <li><code>Option 2: check box</code></li>
+                            <li><code>CC Number: 1234567890</code></li>
+                            <li><code>Expiry Date: 05/18</code></li>
+                            <li><code>Name: your-name</code></li>
+                        </ul>
                     </ul>
-                    <div align="right">
-                        <img src="images/brms_bpms_workshop/image296.png">
+                    <img src="images/bpms-workshop/image5-17.png">
+                </section>
+
+                <section>
+                    <h2>Run JBoss Travel Agency</h2>
+                    <ul>
+                        <li>Click on <code>COMPLETE</code> button to submit task form.</li>
+                    </ul>
+                    <img src="images/bpms-workshop/image5-18.png">
+                </section>
+
+                <section>
+                    <div style="width: 1056px; height: 150px">
+                        <h2>Run JBoss Travel Agency</h2>
+                    </div>
+                    <div style="width: 1056px; height: 600px">
+                        <ul>
+                            <li>The task will complete, presented empty task list</li>
+                            <img src="images/bpms-workshop/image5-20.png">
+                            <li>Now we can go back and view the completed process instance(s)</li>
+                            <li><code>Process Management -> Process Instances</code></li>
+                        </ul>
+                        <div align="right">
+                            <img src="images/bpms-workshop/image5-19.png">
+                        </div>
                     </div>
                 </section>
 
                 <section>
-                    <h2>Running rewards process</h2>
-                    <ul>
-                        <li>Even though the data is not available for viewing right now, we can approve or deny the request</li>
-                        <li>We will approve this request by checking the box (leave blank to deny)</li>
-                        <li>Finally, to complete task, click on <i>Complete</i> button at the bottom</li>
-                    </ul>
-                    <div align="right">
-                        <img src="images/brms_bpms_workshop/image297.png">
-                    </div>
-                </section>
-
-                <section>
-                    <h2>Running rewards process</h2>
-                    <ul>
-                        <li>You should see a yellow popup bar stating task was completed</li>
-                        <li>Then we are presented with an empty task list as we are done</li>
-                        <img src="images/brms_bpms_workshop/image298.png">
-                        <li>Now we can go back and view the completed process instance</li>
-                        <li><code>Process Management -> Process Instances</code></li>
-                    </ul>
-                    <div align="right">
-                        <img src="images/brms_bpms_workshop/image299.png">
-                    </div>
-                </section>
-
-                <section>
-                    <h2>Running rewards process</h2>
+                    <h2>Run JBoss Travel Agency</h2>
                     <ul>
                         <li>The initial view is empty as you are looking at <i>Active</i> process instances</li>
-                        <img src="images/brms_bpms_workshop/image300.png">
-                        <li>We need the <i>Completed</i> instances, here I have two, yours might differ</li>
-                        <li>Click on magnifying glass icon to open your instance</li>
+                        <img src="images/bpms-workshop/image5-21.png">
+                        <li>We need the <i>Completed</i> instances, you should have three</li>
+                        <img src="images/bpms-workshop/image5-22.png">
                     </ul>
                 </section>
 
                 <section>
-                    <h2>Running rewards process</h2>
+                    <h2>Run JBoss Travel Agency</h2>
                     <ul>
-                        <li>Here we selected process instance with <i>ID 2</i></li>
-                        <li>There are various details we can examine, like the <i>Instance Log</i> to see the path taken</li>
+                        <li>Here we selected process instance with <i>ID 1</i></li>
+                        <li>There are various details we can examine, but we will open the process image</li>
+                        <img src="images/bpms-workshop/image5-23.png">
                     </ul>
-                    <div align="right">
-                        <img src="images/brms_bpms_workshop/image301.png">
+                </section>
+
+                <section>
+                    <h2>Run JBoss Travel Agency</h2>
+                    <ul>
+                        <li>Note the path taken is grey and we see that it completed after payment processing</li>
+                        <li>This process contains fraud detection based on credit cards starting with <code>'1234'</code></li>
+                        <li>As we submit such a card, did the payment get rejected? Let's go see...</li>
+                        <img src="images/bpms-workshop/image5-24.png">
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Run JBoss Travel Agency</h2>
+                    <ul>
+                        <li>Let's view process instance with <i>ID 3</i></li>
+                        <li>There are various details we can examine, but we will open the process image</li>
+                        <img src="images/bpms-workshop/image5-25.png">
+                    </ul>
+                </section>
+
+                <section>
+                    <div style="width: 1056px; height: 300px">
+                        <h2>Run JBoss Travel Agency</h2>
+                        <ul>
+                            <li>Note the path taken is grey and we see that it booked the Flight and Hotel before checking
+                                for a fraudulant payment method, which it found, causing the route with compensation (rollback)
+                                to be taken, signalling Flight and Hotel compensation service tasks.</li>
+                        </ul>
+                    </div>
+                    <div style="width: 1056px; height: 400px">
+                        <img src="images/bpms-workshop/image5-26.png">
                     </div>
                 </section>
 
                 <section>
-                    <h2>Running rewards process</h2>
-                    <ul>
-                        <li>What is more interesting is an image of the paths taken which is found under <i>Views</i> button</li>
-                        <li><code>Views -> Process Model</code></li>
-                        <img src="images/brms_bpms_workshop/image302.png">
-                        <li>The grey path is the one taken by this instance</li>
-                    </ul>
-                    <div align="right">
-                        <img src="images/brms_bpms_workshop/image303.png">
+                    <div style="width: 1056px; height: 200px">
+                        <h2>Run JBoss Travel Agency</h2>
+                        <ul>
+                            <li>Can also examine the server log (console where you started JBoss BPM Suite server) to
+                            see the compensation (rollback) activites:</li>
+                        </ul>
+                    </div>
+                    <div style="width: 1056px; height: 400px">
+                        <img src="images/bpms-workshop/image5-27.png">
                     </div>
                 </section>
 
                 <section>
-                    <h2>Running rewards process</h2>
-                    <ul>
-                        <li>Also interesting are the values that the process variables contained, also found under <i>Views</i> button</li>
-                        <li><code>Views -> Process Variables</code></li>
-                        <img src="images/brms_bpms_workshop/image304.png">
-                        <li>View variable values over time by clicking any clock icon</li>
-                    </ul>
-                    <div align="right">
-                        <img src="images/brms_bpms_workshop/image305.png">
-                    </div>
-                </section>
-
-                <section>
-                    <h2>Running rewards process</h2>
+                    <h2>Run JBoss Travel Agency</h2>
                     <ul>
                         <li>Now lets start a new process instance (remember how?) and not complete it</li>
                         <li>We will leave it to make the BAM (Business Activity Monitoring) dashboards interesting</li>
-                        <li>After starting a new process let's open the <i>Process & Task Dashboard</i></li>
+                        <li>After starting a new process, open <i>Process & Task Dashboard</i></li>
                         <li><code>Dashboards -> Process & Task Dashboard</code></li>
                     </ul>
                     <div align="right">
-                        <img src="images/brms_bpms_workshop/image306.png">
+                        <img src="images/bpms-workshop/image5-28.png">
                     </div>
                 </section>
 
                 <section>
-                    <h2>Running rewards process</h2>
+                    <h2>Run JBoss Travel Agency</h2>
                     <ul>
-                        <li>The dashboard shows the history information on process and tasks</li>
+                        <li>The dashboard shows the information on process and tasks, click on specialtripsagency
+                            to drill down on active instances...</li>
                     </ul>
                     <div align="right">
-                        <img src="images/brms_bpms_workshop/image307.png">
+                        <img src="images/bpms-workshop/image5-29.png">
                     </div>
                 </section>
 
                 <section>
-                    <h2>Running rewards process</h2>
+                    <h2>Run JBoss Travel Agency</h2>
                     <ul>
-                        <li>Drill down into <i>Instances by process</i> pie chart by clicking on it (top right)</li>
-                        <li>Now you see the status of the instances, a not assigned task from our active process instance</li>
+                        <li>Note there are many more data overviews, feel free to browse around...</li>
                     </ul>
                     <div align="right">
-                        <img src="images/brms_bpms_workshop/image308.png">
+                        <img src="images/bpms-workshop/image5-30.png">
                     </div>
                 </section>
 
+
                 <section>
-                    <h2>Running rewards process</h2>
+                    <h2>Run JBoss Travel Agency</h2>
                     <ul>
-                        <li>Video tour showing how it works:</li>
+                        <li>Extra credit: find and examine the main process service tasks to see how your JBoss Fuse
+                        microservices have been integrated:</li>
                     </ul>
-                    <a href="http://vimeo.com/ericschabell/bpms-hr-employee-rewards-demo-run" target="_blank"><img src="images/brms_bpms_workshop/image309.png"></a>
+                    <div align="right">
+                        <img src="images/bpms-workshop/image5-31.png">
+                    </div>
                 </section>
-
-
                 <section>
-                    <h2>Rewards process project</h2>
-                    <h5>(next up, new requirements leads to next evolution of the reward process project...)</h5>
+                    <div style="width: 1056px; height: 250px;">
+                        <h2>Run JBoss Travel Agency</h2>
+                        Again, if it fails to work for you for any reason, stop by the Red Hat booth, find the Automate
+                        or Integrate pods for your lab on video!
+                    </div>
+                    <div style="width: 1056px; height: 400px;">
+                        <img src="images/microservices-video.png">
+                    </div>
                 </section>
 
                 <section data-background="images/jteimages/image42.png" data-background-position="top">
-                    <div style="width: 1056px; height: 100px;" align="right">
+                    <div style="width: 1056px; height: 450px;" align="right">
+                    </div>
+                    <div style="width: 1156px; height: 100px;" align="right">
                         <div style="width: 500px; height: 100px;" align="left">
                             Eric D. Schabell<br>
                             JBoss Technology Evangelist<br>
@@ -396,27 +415,21 @@
                 </section>
 
                 <section>
-                    <div align="center">
+                    <div style="width: 1056px; height: 200px; color: white">
                         <img height="150" width="99%" src="images/references.jpg">
                     </div>
-                    <ul>
-                        <li>JBoss BRMS & BPM Suite Articles</li>
+                    <div style="width: 1056px; height: 500px">
                         <ul>
-                            <li><a href="http://schabell.org/search/label/BRMS" style="color: red" target="_blank">http://schabell.org/search/label/BRMS</a></li>
-                            <li><a href="http://schabell.org/search/label/BPMS" style="color: red" target="_blank">http://schabell.org/search/label/BPMS</a></li>
+                            <li>Racing Camel with BPM and Red Hat JBoss Fuse</li>
+                            <ul>
+                                <li><a href="https://github.com/eschabell/summit-racing-camel-with-jboss-bpm-fuse" style="color: red" target="_blank">Get this workshop from Github</a></li>
+                                <li><a href="https://github.com/jbossdemocentral/bpms-fuse-travel-agency-integration-demo" style="color: red" target="_blank">Travel Agency Microservices project</a></li>
+                                <li><a href="http://bpmworkshop-onthe.rhcloud.com" style="color: red" target="_blank">Free online BPM workshops</a></li>
+                                <li><a href="http://www.schabell.org/2015/05/microservices-migration-story-with-jboss-bpm-travel-agency-video.html" style="color: red" target="_blank">Video of Travel Agency Microservices</a></li>
+                                <li><a href="http://wei-meilin.blogspot.nl/2015/05/integration-project-micro-services_22.html" style="color: red" target="_blank">Series howto build JBoss Fuse Microservices</a></li>
+                            </ul>
                         </ul>
-                        <li>JBoss BPM Suite Demos</li>
-                        <ul>
-                            <li><a href="http://www.schabell.org/2014/12/3-reasons-you-need-new-jboss-travel-agency.html" style="color: red" target="_blank">Travel Agency Demo</a></li>
-                            <li><a href="http://www.schabell.org/2014/05/redhat-jboss-bpmsuite-generic-loan-signal-event.html" style="color: red" target="_blank">Generic Loan Demo</a></li>
-                            <li><a href="http://www.schabell.org/2015/03/jboss-bpmsuite-helping-travelers-with-lost-bags.html" style="color: red" target="_blank">Baggage Delivery Demo</a></li>
-                        </ul>
-                        <li>JBoss bpmPaaS Demos</li>
-                        <ul>
-                            <li><a href="http://www.schabell.org/2014/05/redhat-openshift-bpmPaaS-genericloan-demo.html" style="color: red" target="_blank">bpmPaaS Generic Loan Process in the Cloud</a></li>
-                            <li><a href="http://www.schabell.org/2015/02/into-clouds-with-jboss-bpm-travel-agency.html" style="color: red" target="_blank">bpmPaaS Travel Agency in the Cloud</a></li>
-                        </ul>
-                    </ul>
+                    </div>
                 </section>
 
                 <section data-background="images/rh-images/rh-bg-start.jpg" data-background-size="cover" data-background-position="center bottom">
