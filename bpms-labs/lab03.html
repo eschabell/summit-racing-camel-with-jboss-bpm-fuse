@@ -106,8 +106,8 @@
                 <section>
                     <h2>Complete the BPM process</h2>
                     <ul>
-                        <li>So where does our data for the rules (our facts) come from?</li>
-                        <li>How can we call rules without any facts, well in the main process we find the answer:</li>
+                        <li>So where does our data for the rules (our facts) come from? How can we call rules without any facts?</li>
+                        <li>In the main process we find the answer:</li>
                         <ul>
                             <li>the facts were put into memory (into a session) for us, in 'Prepare Data', before calling
                             the sub-process</li>
@@ -216,10 +216,11 @@
                 <section>
                     <h2>Complete the BPM process</h2>
                     <ul>
-                        <li>Next up is the discount rule that are provided as a decision table</li>
+                        <li>Next is discount rule, provided as a decision table</li>
                         <li>Let's look at this before we setup our rule task:</li>
                         <ul>
-                            <li>click on <code>Guided Decision Tables -> AdditionalTravelersDiscount</code> to view</li>
+                            <li><code>Guided Decision Tables -> AdditionalTravelersDiscount</code> and expand</li>
+                            <li>note options list <code>ruleflow-group: 'discount'</code></li>
                             <div style="float: right">
                                 <img src="images/bpms-workshop/image3-12.png" />
                             </div>
@@ -278,7 +279,7 @@
                 <section>
                     <h2>Complete the BPM process</h2>
                     <ul>
-                        <li>The validation rules are now used in <code>Apply Additional Travelers Discount</code></li>
+                        <li>The discount rules are now used in <code>Apply Additional Travelers Discount</code></li>
                         <ul>
                             <div style="float: right">
                                 <img src="images/bpms-workshop/image3-18.png" />
@@ -356,7 +357,7 @@
                 <section>
                     <h2>Complete the BPM process</h2>
                     <ul>
-                        <li>The validation rules are now used in <code>Calculate Total</code></li>
+                        <li>The total rules are now used in <code>Calculate Total</code></li>
                         <ul>
                             <div style="float: right">
                                 <img src="images/bpms-workshop/image3-25.png" />
@@ -365,20 +366,18 @@
                     </ul>
                 </section>
 
-
-<!-- TODO: final node Retract Facts to be done.... -->
                 <section>
                     <div style="width: 1056px; height: 150px">
                         <h2>Complete the BPM process</h2>
                     </div>
                     <div style="width: 1056px; height: 700px">
                         <ul>
-                            <li>Next up is the total price calculations as a technical rule</li>
-                            <li>Let's look at this before we setup our rule task:</li>
+                            <li>Next up are the retract rules, a set of guided rules to clean up all facts from the
+                                current session before we exit our sub-process.</li>
                             <ul>
-                                <li>to view click on <code>DRL -> CalculateTotalPriceOnDiscountProvided</code></li>
+                                <li>the rules are under <code>GUIDED RULES -> Retract*</code> (rules pre-fixed with Retract)</li>
                                 <div style="float: right">
-                                    <img src="images/bpms-workshop/image3-19.png" />
+                                    <img src="images/bpms-workshop/image3-26.png" />
                                 </div>
                             </ul>
                         </ul>
@@ -388,12 +387,12 @@
                 <section>
                     <h2>Complete the BPM process</h2>
                     <ul>
-                        <li>Back to the process, setup total calculation with a rule task:</li>
+                        <li>Back to the process, setup retract with a rule task:</li>
                         <ul>
-                            <li>click on <code>'Calculate Total'</code> to select</li>
+                            <li>click on <code>'Retract Facts'</code> to select</li>
                             <li>slide open <code>Properties</code> panel on the right</li>
                             <div style="float: right">
-                                <img src="images/bpms-workshop/image3-20.png" />
+                                <img src="images/bpms-workshop/image3-27.png" />
                             </div>
                         </ul>
                     </ul>
@@ -407,8 +406,8 @@
                             <li><code>Task Type: Business Rule</code></li>
                             <li>note the change to the node, a rule icon now identifies it</li>
                             <div style="float: right">
-                                <img src="images/bpms-workshop/image3-21.png" />
-                                <img src="images/bpms-workshop/image3-22.png" />
+                                <img src="images/bpms-workshop/image3-28.png" />
+                                <img src="images/bpms-workshop/image3-29.png" />
                             </div>
                         </ul>
                     </ul>
@@ -422,41 +421,89 @@
                         <ul>
                             <li>We need to set the following field:</li>
                             <ul>
-                                <li><code>Ruleflow Group: total</code></li>
-                                <li>open the pop-up editor, view the rules in <code>'total'</code>, select <code>total</code>, click on <code>Save</code></li>
+                                <li><code>Ruleflow Group: retract</code></li>
+                                <li>open the pop-up editor, view the rules in <code>'retract'</code>, select <code>retract</code>, click on <code>Save</code></li>
                             </ul>
                         </ul>
                     </div>
                     <div style="width: 1056px; height: 400px">
-                        <img width="49%" src="images/bpms-workshop/image3-23.png" />
-                        <img width="49%" src="images/bpms-workshop/image3-24.png" />
+                        <img width="49%" src="images/bpms-workshop/image3-30.png" />
+                        <img width="49%" src="images/bpms-workshop/image3-31.png" />
                     </div>
                 </section>
-
 
                 <section>
                     <h2>Complete the BPM process</h2>
                     <ul>
-                        <li>The validation rules are now used in <code>Calculate Total</code></li>
+                        <li>The retraction rules are now used in <code>Retract Facts</code></li>
                         <ul>
                             <div style="float: right">
-                                <img src="images/bpms-workshop/image3-25.png" />
+                                <img src="images/bpms-workshop/image3-32.png" />
                             </div>
                         </ul>
                     </ul>
                 </section>
 
-<!-- TODO: save process and ensure it builds to be done.... -->
+                <section>
+                    <h2>Complete the BPM process</h2>
+                    <ul>
+                        <li>The Calculate Price sub-process is now finished</li>
+                        <li>click on mini disk icon top right in designer, save, add commit message</li>
+                        <ul>
+                            <div style="float: right">
+                                <img src="images/bpms-workshop/image3-33.png" />
+                                <img src="images/bpms-workshop/image3-34.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
 
+                <section>
+                    <h2>Complete the BPM process</h2>
+                    <ul>
+                        <li>Also note all <code>Message</code> errors at the bottom are gone</li>
+                        <li>click on refresh in the bottom pane, if still errors, correct them!</li>
+                        <ul>
+                            <div style="float: right">
+                                <img src="images/bpms-workshop/image3-35.png" />
+                            </div>
+                        </ul>
+                    </ul>
+                </section>
 
-
-
-
+                <section>
+                    <div  style="width: 1056px; height: 100px; float: right">
+                        <h2>Ensure project builds</h2>
+                    </div>
+                    <ul>
+                        <li>Before you build project, ensure there are no active deployments</li>
+                        <li><code>Deploy -> Process Deployments</code></li>
+                        <li>if exists an entry for <code>Special Trips Agency 2.0.0</code> then remove by clicking on mini icon <img src="images/bpms-workshop/image2-42.png" /></li>
+                    </ul>
+                    <div  style="width: 1056px; height: 500px; float: right">
+                        <img src="images/bpms-workshop/image2-40.png" />
+                        <img width="60%" src="images/bpms-workshop/image2-41.png" />
+                        <img src="images/bpms-workshop/image2-43.png" />
+                        <img width="60%" src="images/bpms-workshop/image2-44.png" />
+                    </div>
+                </section>
+                <section>
+                    <div  style="width: 1056px; height: 100px; float: right">
+                        <h2>Ensure project builds</h2>
+                    </div>
+                    <ul>
+                        <li>right pane -> <code>OPEN PROJECT EDITOR -> BUILD (top right) -> BUILD & DEPLOY</code></li>
+                        <li><code>(should see green pop-up 'Build Successful')</code></li>
+                    </ul>
+                    <div  style="width: 1056px; height: 500px; float: right">
+                        <img src="images/bpms-workshop/image3-36.png" />
+                    </div>
+                </section>
 
                 <section>
                     <h3>Building the Travel Agency</h3>
                     <h5>(next up, building JBoss Fuse microservices...)</h5>
-                    <img src="images/bpms-workshop/image2-46.png">
+                    <img src="images/bpms-workshop/image3-37.png">
                 </section>
 
                 <section data-background="images/jteimages/image42.png" data-background-position="top">
