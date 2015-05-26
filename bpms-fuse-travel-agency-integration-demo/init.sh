@@ -202,6 +202,10 @@ echo "  - enabling demo accounts logins in users.properties file..."
 echo
 cp $SUPPORT_DIR/fuse/users.properties $FUSE_SERVER_CONF
 
+echo "  - Add local bpm repo config file..."
+echo
+cp $SUPPORT_DIR/fuse/org.ops4j.pax.url.mvn.cfgs $FUSE_SERVER_CONF
+
 
 echo "  - copying a modified org.apache.servicemix.bundles.spring-orm-3.2.9.RELEASE_1.jar file into server..."
 echo
