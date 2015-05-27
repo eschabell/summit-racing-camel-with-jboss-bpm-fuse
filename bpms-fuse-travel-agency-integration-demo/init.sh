@@ -80,7 +80,7 @@ else
 	exit
 fi
 
-if [[ -r $SRC_DIR/$FUSE_ZIP || -L $SRC_DIR/$FUSE_ZIP ]]; then
+if [ -r $SRC_DIR/$FUSE_ZIP ]||[ -L $SRC_DIR/$FUSE_ZIP ]; then
 		echo $DEMO FUSE is present...
 		echo
 else
