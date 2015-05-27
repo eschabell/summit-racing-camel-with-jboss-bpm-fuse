@@ -30,13 +30,17 @@ FUSE_VERSION=6.1.1
 
 echo "Start compile and deploy the rest of travel agency camel demo project to fuse"
 echo         
-mvn fabric8:deploy 
+mvn clean fabric8:deploy 
 
 
 
 echo "Create containers and add profiles for Flight web service endpoint"
 echo         
 sh $FUSE_SERVER_BIN/client -r 2 -d 5 'container-create-child --profile demo-travelagency-webendpoint root wsflightcon'
+
+echo "Create containers and add profiles for Hotel web service endpoint"
+echo         
+sh $FUSE_SERVER_BIN/client -r 2 -d 5 'container-create-child --profile demo-travelagency-hotelwsendpoint root wshotelcon
 
 echo "Create containers and add profiles for flight booking service"
 echo         
