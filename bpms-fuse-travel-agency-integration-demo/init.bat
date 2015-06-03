@@ -146,45 +146,12 @@ cd "%PROJECT_HOME%"
 echo.
 echo ===============================================================================
 echo =                                                                             =
-echo =  You can now start the JBoss BPM Suite with:                                =
+echo =  You can now start the workshop by following the rest of the                =
+echo =  instructions in:                                                           =
 echo =                                                                             =
-echo = %SERVER_BIN%/standalone.bat                                                 =
+echo =     Summit-Lab-Tavel-Agency-Start.odt                                       = 
 echo =                                                                             =
-echo =    - login, build and deploy JBoss BPM Suite process project at:            =
-echo =                                                                             =
-echo =        http://localhost:8080/business-central    u:erics / p:bpmsuite1!     =
-echo =                                                                             =
-echo =  Deploying the camel route in JBoss Fuse as follows:                        =
-echo =                                                                             =
-echo =   - add fabric server passwords for Maven Plugin to your                    =
-echo =     ~/.m2/settings.xml file the fabric server's user and password so that   =
-echo =     the maven plugin can login to the fabric. fabric8.upload.repoadminadmin =
-echo =                                                                             =
-echo =   - start the JBoss Fuse with:                                              =
-echo =                                                                             =
-echo =       %FUSE_BIN%/fuse                               =
-echo =                                                                             =
-echo =   - start up fabric in fuse console: fabric:create --wait-for-provisioning  =
-echo =                                                                             =
-echo =   - run 'mvn fabric8:deploy' from projects/brms-fuse-integration/simpleRoute=
-echo =                                                                             =
-echo =   - login to Fuse management console at:                                    =
-echo =                                                                             =
-echo =       http://localhost:8181     u:admin / p:admin                           =
-echo =                                                                             =
-echo =   - connect to root container with login presented by console               =
-echo =	     u:admin / p:admin                                                     =
-echo =                                                                             =
-echo =   - create container name c1 and add BPMSuiteFuse profile                   =
-echo =     see readme for screenshot                                               =
-echo =                                                                             =
-echo =   - open c1 container to view route under 'DIAGRAM' tab                     =
-echo =                                                                             =
-echo =   - trigger camel route by placing support/date/message.xml file into the   =
-echo =     following folder:                                                       =
-echo =                                                                             =
-echo =       %FUSE_HOME%\instances\c1\src\data  =
-echo =                                                                             =
+echo =     Summit-Lab-Tavel-Agency-Start.pdf                                       =
 echo =                                                                             =
 echo =   %DEMO% Setup Complete.                                               =
 echo ===============================================================================

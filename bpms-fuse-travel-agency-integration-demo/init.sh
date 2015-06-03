@@ -222,34 +222,12 @@ fi
 
 cp $SUPPORT_DIR/fuse/data/travelagency.mv.db ~/h2/
 
-
-
 echo
 echo "==========================================================================================="
 echo "=                                                                                         ="
-echo "=  You can now start the JBoss BPM Suite with:                                            ="
+echo "=  You can now start the workshop by following the rest of the instructions in:           ="
 echo "=                                                                                         ="
-echo "=        $SERVER_BIN/standalone.sh                                         ="
-echo "=                                                                                         ="
-echo "=    - login, build and deploy JBoss BPM Suite process project at:                        ="
-echo "=                                                                                         ="
-echo "=        http://localhost:8080/business-central (u:erics/p:bpmsuite1!)                    ="
-echo "=                                                                                         ="
-echo "=  Starting the camel route in JBoss Fuse as follows:                                     ="
-echo "=                                                                                         ="
-echo "=    - add fabric server passwords for Maven Plugin to your ~/.m2/settings.xml            =" 
-echo "=      file the fabric server's user and password so that the maven plugin can            ="
-echo "=      login to the fabric. fabric8.upload.repo admin admin                               ="
-echo "=                                                                                         ="
-echo "=    - Start JBoss Fuse server with                                                       ="
-echo "=                                                                                         ="
-echo "=        $FUSE_SERVER_BIN/fuse                                   ="
-echo "=                                                                                         ="
-echo "=    - login to Fuse management console at:                                               ="
-echo "=                                                                                         ="
-echo "=        http://localhost:8181    (u:admin/p:admin)                                       ="
-echo "=                                                                                         ="
-echo "=    - Go to Runtime Tab, start all 6 containers                                          ="
+echo "=     Summit-Lab-Tavel-Agency-Start.odt or Summit-Lab-Tavel-Agency-Start.pdf
 echo "=                                                                                         ="
 echo "=   $DEMO Setup Complete.                 ="
 echo "==========================================================================================="
