@@ -13,9 +13,10 @@
 
   <modules>
   	<module>webendpoint</module>
-	<module>promotionflights</module>
-	<module>bookingservice</module>
-	<module>hotelbookingservice</module>	
+  	<module>hotelwebendpoint</module>
+		<module>promotionflights</module>
+		<module>bookingservice</module>
+		<module>hotelbookingservice</module>	
   </modules>
   
   <properties>
