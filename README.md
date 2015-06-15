@@ -29,6 +29,8 @@ Install on your machine
 
 Supporting Articles
 -------------------
+[Red Hat Summit 2015 Preview - Racing Camel with BPM and JBoss Fuse](http://www.schabell.org/2015/06/redhat-summit-2015-preview-racing-camel-with-bpm.html)
+
 [Integration Project- Micro Services Migration Story with JBoss BPM Travel Agency - Part Three](http://wei-meilin.blogspot.nl/2015/05/integration-project-micro-services_15.html)
 
 [Integration Project- Micro Services Migration Story with JBoss BPM Travel Agency - Part Two](http://wei-meilin.blogspot.nl/2015/05/integration-project-micro-services_11.html)
