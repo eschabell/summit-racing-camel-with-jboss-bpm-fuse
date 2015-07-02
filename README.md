@@ -1,11 +1,11 @@
 Racing Camel with BPM and Red Hat JBoss Fuse
 ============================================
-Workshop given at Red Hat Summit 2015:
+Workshop given at Red Hat Summit 2015, now a half day workshop in a can:
 
 Did you know that you can easily merge your enterprise Apache Camel integration with your business processes? Join this lab to see
 how you can integrate business process management (BPM) with Apache Camel.
 
-In this lab, you will:
+In this workshop, you will:
 
   - Create a project containing several BPM processes that integrate seamlessly with JBoss Fuse.
   
@@ -66,4 +66,8 @@ Released versions
 -----------------
 See the tagged releases for the following versions of the product:
 
+- v1.1 - JBoss BPM Suite 6.1 and JBoss Fuse 6.1.1 Travel Agency with microservices migration half day workshop.
+
 - v1.0 - JBoss BPM Suite 6.1 and JBoss Fuse 6.1.1 Travel Agency with microservices workshop for Red Hat Summit 2015.
+
+![Workshop](https://raw.githubusercontent.com/eschabell/summit-racing-camel-with-jboss-bpm-fuse/master/bpms-fuse-travel-agency-integration-demo/docs/demo-images/workshop-start.png)
