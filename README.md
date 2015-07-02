@@ -18,7 +18,7 @@ Topics: Application development & integration, Scalability, Interoperability, Fl
 
 Install on your machine
 -----------------------
-![Cover Slide](https://raw.githubusercontent.com/eschabell/summit-racing-camel-with-jboss-bpm-fuse/master/bpms-labs/cover-summit.png)
+![Cover Slide](https://raw.githubusercontent.com/eschabell/summit-racing-camel-with-jboss-bpm-fuse/master/bpms-fuse-travel-agency-integration-demo/docs/demo-images/workshop-start.png)
 
 1. [Download and unzip.](https://github.com/eschabell/summit-racing-camel-with-jboss-bpm-fuse/archive/master.zip)
 
@@ -70,4 +70,3 @@ See the tagged releases for the following versions of the product:
 
 - v1.0 - JBoss BPM Suite 6.1 and JBoss Fuse 6.1.1 Travel Agency with microservices workshop for Red Hat Summit 2015.
 
-![Workshop](https://raw.githubusercontent.com/eschabell/summit-racing-camel-with-jboss-bpm-fuse/master/bpms-fuse-travel-agency-integration-demo/docs/demo-images/workshop-start.png)
