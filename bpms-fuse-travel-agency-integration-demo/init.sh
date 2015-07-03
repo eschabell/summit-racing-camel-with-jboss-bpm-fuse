@@ -17,14 +17,14 @@ BPM_VERSION=6.1
 
 #Fuse env 
 DEMO_HOME=./target
-FUSE=jboss-fuse-6.1.1.redhat-412
-FUSE_ZIP=jboss-fuse-full-6.1.1.redhat-412.zip
+FUSE=jboss-fuse-6.2.0.redhat-133
+FUSE_ZIP=jboss-fuse-full-6.2.0.redhat-133.zip
 FUSE_HOME=$DEMO_HOME/$FUSE
 FUSE_PROJECT=projects/fuseparent
 FUSE_SERVER_CONF=$FUSE_HOME/etc
 FUSE_SERVER_SYSTEM=$FUSE_HOME/system
 FUSE_SERVER_BIN=$FUSE_HOME/bin
-FUSE_VERSION=6.1.1
+FUSE_VERSION=6.2.0
 
 
 
@@ -119,19 +119,8 @@ if [ $? -ne 0 ]; then
 	exit
 fi
 
-if [ -x target ]; then
-  # Unzip the JBoss FUSE instance.
-  echo Installing JBoss FUSE $FUSE_VERSION
-  echo
-  unzip -q -d target $SRC_DIR/$FUSE
-else
-	echo
-	echo Missing target directory, stopping installation.
-	echo 
-	exit
-fi
 
-
+echo Installing JBoss FUSE $FUSE_VERSION
 # Move the old JBoss instance, if it exists, to the OLD position.
 if [ -x $FUSE_HOME ]; then
 		echo "  - existing JBoss FUSE detected..."
@@ -164,8 +153,6 @@ cp -r $SUPPORT_DIR/bpm-suite-demo-niogit $SERVER_BIN/.niogit
 echo "  - setting up web services..."
 echo
 mvn clean install -f $PRJ_DIR/pom.xml
-cp -r $PRJ_DIR/acme-demo-flight-service/target/acme-flight-service-1.0.war $SERVER_DIR
-cp -r $PRJ_DIR/acme-demo-hotel-service/target/acme-hotel-service-1.0.war $SERVER_DIR
 
 echo
 echo "  - adding acmeDataModel-1.0.jar to business-central.war/WEB-INF/lib"
@@ -204,12 +191,7 @@ cp $SUPPORT_DIR/fuse/users.properties $FUSE_SERVER_CONF
 
 echo "  - Add local bpm repo config file..."
 echo
-cp $SUPPORT_DIR/fuse/org.ops4j.pax.url.mvn.cfgs $FUSE_SERVER_CONF
-
-
-echo "  - copying a modified org.apache.servicemix.bundles.spring-orm-3.2.9.RELEASE_1.jar file into server..."
-echo
-cp $SUPPORT_DIR/fuse/org.apache.servicemix.bundles.spring-orm-3.2.9.RELEASE_1.jar $FUSE_SERVER_SYSTEM/org/apache/servicemix/bundles/org.apache.servicemix.bundles.spring-orm/3.2.9.RELEASE_1/
+cp $SUPPORT_DIR/fuse/org.ops4j.pax.url.mvn.cfg $FUSE_SERVER_CONF
 
 echo "  - create h2 database file..."
 echo
@@ -227,7 +209,7 @@ echo "==========================================================================
 echo "=                                                                                         ="
 echo "=  You can now start the workshop by following the rest of the instructions in:           ="
 echo "=                                                                                         ="
-echo "=     Summit-Lab-Tavel-Agency-Start.odt or Summit-Lab-Tavel-Agency-Start.pdf
+echo "=     Summit-Lab-Tavel-Agency-Start.odt or Summit-Lab-Tavel-Agency-Start.pdf              ="
 echo "=                                                                                         ="
 echo "=   $DEMO Setup Complete.                 ="
 echo "==========================================================================================="
