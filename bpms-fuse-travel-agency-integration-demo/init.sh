@@ -108,6 +108,7 @@ if [ $? -ne 0 ]; then
 	exit
 fi
 
+echo
 echo "JBoss BPM Suite installer running now..."
 echo
 java -jar $SRC_DIR/$BPMS $SUPPORT_DIR/installation-bpms -variablefile $SUPPORT_DIR/installation-bpms.variables
@@ -117,29 +118,14 @@ if [ $? -ne 0 ]; then
 	exit
 fi
 
-
+echo
 echo Installing JBoss FUSE $FUSE_VERSION
-# Move the old JBoss instance, if it exists, to the OLD position.
-if [ -x $FUSE_HOME ]; then
-		echo "  - existing JBoss FUSE detected..."
-		echo
-		echo "  - moving existing JBoss FUSE aside..."
-		echo
-		rm -rf $FUSE_HOME.OLD
-		mv $FUSE_HOME $FUSE_HOME.OLD
+echo
+echo Unpacking JBoss FUSE $VERSION
+echo
+unzip -q -d $DEMO_HOME $SRC_DIR/$FUSE_ZIP
 
-		# Unzip the JBoss instance.
-		echo Unpacking JBoss FUSE $VERSION
-		echo
-		unzip -q -d $DEMO_HOME $SRC_DIR/$FUSE_ZIP
-else
-		# Unzip the JBoss instance.
-		echo Unpacking new JBoss FUSE...
-		echo
-		unzip -q -d $DEMO_HOME $SRC_DIR/$FUSE_ZIP
-fi
-
-
+echo
 echo "  - enabling demo accounts role setup in application-roles.properties file..."
 echo
 cp $SUPPORT_DIR/application-roles.properties $SERVER_CONF
@@ -154,10 +140,11 @@ mvn clean install -f $PRJ_DIR/pom.xml
 
 echo
 echo "  - adding acmeDataModel-1.0.jar to business-central.war/WEB-INF/lib"
+echo
 cp -r $PRJ_DIR/acme-data-model/target/acmeDataModel-1.0.jar $SERVER_DIR/business-central.war/WEB-INF/lib
 
-echo
 echo "  - deploying external-client-ui-form-1.0.war to EAP deployments directory"
+echo
 cp -r $PRJ_DIR/external-client-ui-form/target/external-client-ui-form-1.0.war $SERVER_DIR/
 
 echo "  - setting up standalone.xml configuration adjustments..."
