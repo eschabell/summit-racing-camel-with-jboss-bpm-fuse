@@ -65,6 +65,7 @@ Supporting Articles
 Released versions
 -----------------
 See the tagged releases for the following versions of the product:
+
 - v1.2 - JBoss Fuse 6.2 update and migrate OpenJPA to Hibernate.
 
 - v1.1 - JBoss BPM Suite 6.1 and JBoss Fuse 6.1.1 Travel Agency with microservices migration half day workshop.
