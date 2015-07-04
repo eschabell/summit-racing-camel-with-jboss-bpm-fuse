@@ -26,8 +26,6 @@ FUSE_SERVER_SYSTEM=$FUSE_HOME/system
 FUSE_SERVER_BIN=$FUSE_HOME/bin
 FUSE_VERSION=6.2.0
 
-
-
 # wipe screen.
 clear 
 
