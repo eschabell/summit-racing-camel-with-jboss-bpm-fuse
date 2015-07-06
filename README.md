@@ -72,3 +72,4 @@ See the tagged releases for the following versions of the product:
 
 - v1.0 - JBoss BPM Suite 6.1 and JBoss Fuse 6.1.1 Travel Agency with microservices workshop for Red Hat Summit 2015.
 
+![Announcement](https://raw.githubusercontent.com/eschabell/summit-racing-camel-with-jboss-bpm-fuse/master/bpms-fuse-travel-agency-integration-demo/docs/demo-images/announce-workshop.png)
