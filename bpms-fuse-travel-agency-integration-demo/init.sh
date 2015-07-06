@@ -1,6 +1,6 @@
 #!/bin/sh 
 DEMO="JBoss BPM Suite & Fuse Travel Agency Integration Demo"
-AUTHORS="Christina Lin, Eric D. Schabell"
+AUTHORS="Christina Lin, Eric D. Schabell, Andrew Block"
 PROJECT="git@github.com:jbossdemocentral/bpms-fuse-travel-agency-integration-demo.git"
 
 #BPM env
