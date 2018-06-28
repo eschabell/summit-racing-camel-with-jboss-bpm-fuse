@@ -1,3 +1,6 @@
+Update: June 2018 moved to [Gitlab](https://gitlab.com/eschabell/summit-racing-camel-with-jboss-bpm-fuse)
+
+
 Racing Camel with BPM and Red Hat JBoss Fuse
 ============================================
 Workshop originally created for Red Hat Summit, now a half day workshop in a can:
